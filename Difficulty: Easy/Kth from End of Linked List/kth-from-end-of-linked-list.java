@@ -11,6 +11,7 @@ class Node {
 class Solution {
     public int getKthFromLast(Node head, int k) {
         // code here
+        /* Brute Force
         int count=0;
         Node temp=head;
         
@@ -33,5 +34,23 @@ class Solution {
             --t;
         }
         return temp.data;
+        */
+        
+        //Optimal Approach
+        Node first=head;
+        Node second=head;
+        
+        for(int i=0;i<k;i++)
+        {
+            if(first==null)
+            return -1;
+            first=first.next;
+        }
+        while(first!=null)
+        {
+            first=first.next;
+            second=second.next;
+        }
+        return second.data;
     }
 }
