@@ -11,8 +11,10 @@ class Node {
 class Solution {
     public boolean areIdentical(Node head1, Node head2) {
         // code here
+        
         Node temp1=head1;
         Node temp2=head2;
+        /*
         int cnt1=0;
         int cnt2=0;
         while(temp1!=null)
@@ -44,5 +46,24 @@ class Solution {
             }
         }
         return true;
+        */
+        
+        while(temp1!=null && temp2!=null)
+        {
+            if(temp1.data!=temp2.data)
+            {
+                return false;
+            }
+            else
+            {
+                temp1=temp1.next;
+                temp2=temp2.next;
+            }
+        }
+        if(temp1==null && temp2==null)
+        {
+            return true;
+        }
+        return false;
     }
 }
